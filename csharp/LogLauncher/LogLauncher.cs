@@ -229,9 +229,12 @@ namespace LogLauncher
             }
             else if (option.Args.Length > 1)
             {
+                // create new array excluding the first elelent.
                 var new_length = option.Args.Length - 1;
-                string[] arguments = new string[new_length];
+                var arguments = new string[new_length];
                 Array.Copy(option.Args, 1, arguments, 0, new_length);
+
+                // create string from the array
                 argument = string.Join(" ", arguments);
             }
 
