@@ -12,7 +12,7 @@ namespace LogLauncher
             option.FileName = "out.txt";
             option.IsAppend = true;
             option.Args = args;
-            var ret = LogLauncher.Launch(option, args);
+            var ret = LogLauncher.Launch(option);
             return ret;
         }
     }

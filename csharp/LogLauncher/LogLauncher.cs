@@ -94,25 +94,24 @@ namespace LogLauncher
         /// launch program and log to the output
         /// </summary>
         /// <param name="option"></param>
-        /// <param name="args"></param>
         /// <returns></returns>
-        public static int Launch(Option option, string[] args)
+        public static int Launch(Option option)
         {
             string argument = string.Empty;
-            if (args.Length < 1)
+            if (option.Args.Length < 1)
             {
                 return 1;
             }
-            else if (args.Length > 1)
+            else if (option.Args.Length > 1)
             {
-                var new_length = args.Length - 1;
+                var new_length = option.Args.Length - 1;
                 string[] arguments = new string[new_length];
-                Array.Copy(args, 1, arguments, 0, new_length);
+                Array.Copy(option.Args, 1, arguments, 0, new_length);
                 argument = string.Join(" ", arguments);
             }
 
             var process = new Process();
-            process.StartInfo.FileName = args[0];
+            process.StartInfo.FileName = option.Args[0];
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.RedirectStandardError = true;
