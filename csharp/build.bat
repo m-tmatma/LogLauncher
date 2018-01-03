@@ -39,8 +39,8 @@ if defined FRAMEWORK_VERSION (
 	goto :BEGIN
 )
 
-echo %NUGET_EXE% pack %SPC_FILE% -Prop Configuration=Release
-     %NUGET_EXE% pack %SPC_FILE% -Prop Configuration=Release || GOTO :ERROR_END
+echo %NUGET_EXE% pack %SPC_FILE% -Prop Configuration=Release -OutputDirectory %~dp0
+     %NUGET_EXE% pack %SPC_FILE% -Prop Configuration=Release -OutputDirectory %~dp0 || GOTO :ERROR_END
 exit /b 0
 
 :ERROR_END
