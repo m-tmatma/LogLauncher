@@ -259,12 +259,20 @@ namespace LogLauncher
                         {
                             process.OutputDataReceived += new DataReceivedEventHandler(delegate (object obj, DataReceivedEventArgs e)
                             {
+                                if (e.Data == null)
+                                {
+                                    return;
+                                }
                                 var data = ProcessLine(option.Timestamp, e.Data);
                                 streamWriter.WriteLine(data);
                                 Console.WriteLine(data);
                             });
                             process.ErrorDataReceived += new DataReceivedEventHandler(delegate (object obj, DataReceivedEventArgs e)
                             {
+                                if (e.Data == null)
+                                {
+                                    return;
+                                }
                                 var data = ProcessLine(option.Timestamp, e.Data);
                                 streamWriter.WriteLine(data);
                                 Console.WriteLine(data);
