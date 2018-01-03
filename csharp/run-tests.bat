@@ -16,6 +16,7 @@ for /r %%i in (LogLauncher*.exe) do (
 GOTO :END
 
 :RUN_TEST
+@echo on
 echo     %~dp1
 set EXE_PATH=%1
 set EXE_DIR=%~dp1
@@ -35,6 +36,7 @@ set EXE_DIR=%~dp1
 
 %EXE_PATH% -a -tz %EXE_DIR%out-tz-a.txt -- cmd.exe /c dir c:\
 %EXE_PATH% -a -tz %EXE_DIR%out-tz-a.txt -- cmd.exe /c dir c:\
+@echo off
 
 goto :EOF
 
