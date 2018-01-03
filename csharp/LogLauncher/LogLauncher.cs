@@ -238,46 +238,45 @@ namespace LogLauncher
                 argument = string.Join(" ", arguments);
             }
 
-            var process = new Process();
-            process.StartInfo.FileName = option.Args[0];
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.RedirectStandardError = true;
-            process.StartInfo.RedirectStandardInput = false;
-
-            process.StartInfo.CreateNoWindow = false;
-            process.StartInfo.Arguments = argument;
-
             try
             {
-                var fileMode = option.IsAppend ? FileMode.Append : FileMode.Create;
-                var encoding = Encoding.Default;
-
-                using (var fs = File.Open(option.FileName, fileMode, FileAccess.Write, FileShare.Read))
+                using (var process = new Process())
                 {
-                    using (var streamWriter = new StreamWriter(fs))
+                    process.StartInfo.FileName = option.Args[0];
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.RedirectStandardOutput = true;
+                    process.StartInfo.RedirectStandardError = true;
+                    process.StartInfo.RedirectStandardInput = false;
+                    process.StartInfo.CreateNoWindow = false;
+                    process.StartInfo.Arguments = argument;
+
+                    var fileMode = option.IsAppend ? FileMode.Append : FileMode.Create;
+                    var encoding = Encoding.Default;
+
+                    using (var fs = File.Open(option.FileName, fileMode, FileAccess.Write, FileShare.Read))
                     {
-                        process.OutputDataReceived += new DataReceivedEventHandler(delegate (object obj, DataReceivedEventArgs e)
+                        using (var streamWriter = new StreamWriter(fs))
                         {
-                            var data = ProcessLine(option.Timestamp, e.Data);
-                            streamWriter.WriteLine(data);
-                            Console.WriteLine(data);
-                        });
-                        process.ErrorDataReceived += new DataReceivedEventHandler(delegate (object obj, DataReceivedEventArgs e)
-                        {
-                            var data = ProcessLine(option.Timestamp, e.Data);
-                            streamWriter.WriteLine(data);
-                            Console.WriteLine(data);
-                        });
-
-                        process.Start();
-
-                        process.BeginOutputReadLine();
-                        process.BeginErrorReadLine();
-                        process.WaitForExit();
+                            process.OutputDataReceived += new DataReceivedEventHandler(delegate (object obj, DataReceivedEventArgs e)
+                            {
+                                var data = ProcessLine(option.Timestamp, e.Data);
+                                streamWriter.WriteLine(data);
+                                Console.WriteLine(data);
+                            });
+                            process.ErrorDataReceived += new DataReceivedEventHandler(delegate (object obj, DataReceivedEventArgs e)
+                            {
+                                var data = ProcessLine(option.Timestamp, e.Data);
+                                streamWriter.WriteLine(data);
+                                Console.WriteLine(data);
+                            });
+                            process.Start();
+                            process.BeginOutputReadLine();
+                            process.BeginErrorReadLine();
+                            process.WaitForExit();
+                        }
                     }
+                    return process.ExitCode;
                 }
-                return process.ExitCode;
             }
             catch (Exception e)
             {
