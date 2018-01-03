@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>LogLauncher</id>
+    <version>1.0.0</version>
+    <authors>Masaru Tsuchiyama</authors>
+    <owners>Masaru Tsuchiyama</owners>
+    <licenseUrl>https://raw.githubusercontent.com/m-tmatma/LogLauncher/master/LICENCE.txt</licenseUrl>
+    <projectUrl>https://github.com/m-tmatma/LogLauncher</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/m-tmatma/LogLauncher/master/LogLauncher.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>launcher with Timestamp</description>
+    <releaseNotes>https://github.com/m-tmatma/LogLauncher/releases</releaseNotes>
+    <copyright>Copyright 2018, Masaru Tsuchiyama</copyright>
+    <tags>launcher timestamp timezone tee</tags>
+  </metadata>
+  <files>
+    <file src="../LICENSE.txt" target="." />
+    <file src="LogLauncher/bin/Release/v3.5/LogLauncher.exe"   target="lib\net35"  />
+    <file src="LogLauncher/bin/Release/v3.5/LogLauncher.pdb"   target="lib\net35"  />
+    <file src="LogLauncher/bin/Release/v4.0/LogLauncher.exe"   target="lib\net40"  />
+    <file src="LogLauncher/bin/Release/v4.0/LogLauncher.pdb"   target="lib\net40"  />
+    <file src="LogLauncher/bin/Release/v4.5.2/LogLauncher.exe" target="lib\net452" />
+    <file src="LogLauncher/bin/Release/v4.5.2/LogLauncher.pdb" target="lib\net452" />
+    <file src="LogLauncher/bin/Release/v4.6/LogLauncher.exe  " target="lib\net46"  />
+    <file src="LogLauncher/bin/Release/v4.6/LogLauncher.pdb  " target="lib\net46"  />
+  </files>
+</package>
