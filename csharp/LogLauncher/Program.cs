@@ -7,7 +7,12 @@ namespace LogLauncher
     {
         static int Main(string[] args)
         {
-            var ret = LogLauncher.Launch(args);
+            var option = new LogLauncher.Option();
+            option.Timestamp = LogLauncher.TimeStamp.None;
+            option.FileName = "out.txt";
+            option.IsAppend = true;
+            option.Args = args;
+            var ret = LogLauncher.Launch(option, args);
             return ret;
         }
     }
