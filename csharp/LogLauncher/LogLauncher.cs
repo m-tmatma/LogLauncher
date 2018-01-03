@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
@@ -41,6 +42,54 @@ namespace LogLauncher
             /// Argument for a program be launched
             /// </summary>
             public string[] Args { get; set; }
+        }
+
+        public class UnknownOptionException : Exception
+        {
+            public UnknownOptionException()
+            {
+            }
+
+            public UnknownOptionException(string message)
+                : base(message)
+            {
+            }
+        }
+
+        public class LogFileNotFoundException : Exception
+        {
+            public LogFileNotFoundException()
+            {
+            }
+
+            public LogFileNotFoundException(string message)
+                : base(message)
+            {
+            }
+        }
+
+        public class SeparatorNotFoundException : Exception
+        {
+            public SeparatorNotFoundException()
+            {
+            }
+
+            public SeparatorNotFoundException(string message)
+                : base(message)
+            {
+            }
+        }
+
+        public class ArgumentNotFoundException : Exception
+        {
+            public ArgumentNotFoundException()
+            {
+            }
+
+            public ArgumentNotFoundException(string message)
+                : base(message)
+            {
+            }
         }
 
         /// <summary>
@@ -88,6 +137,82 @@ namespace LogLauncher
                     return AddTimeStampTZ(line);
             }
             return line;
+        }
+
+        /// <summary>
+        /// parse commandline argument
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public static Option ParseCommandLine(string[] args)
+        {
+            var mainArgs = new List<string>();
+            var programArgs = new List<string>();
+
+            bool foundSeparater = false;
+            foreach (string arg in args)
+            {
+                if (!foundSeparater)
+                {
+                    if (string.Compare(arg, "--") == 0)
+                    {
+                        foundSeparater = true;
+                        continue;
+                    }
+                    mainArgs.Add(arg);
+                }
+                else
+                {
+                    programArgs.Add(arg);
+                }
+            }
+            if (!foundSeparater)
+            {
+                throw new SeparatorNotFoundException();
+            }
+            if (programArgs.Count == 0)
+            {
+                throw new ArgumentNotFoundException();
+            }
+
+            var option = new Option();
+            option.Timestamp = LogLauncher.TimeStamp.None;
+            option.FileName = null;
+            option.IsAppend = false;
+            option.Args = programArgs.ToArray();
+
+            foreach (string arg in mainArgs)
+            {
+                if (arg.StartsWith("-"))
+                {
+                    if (string.Compare(arg, "-a") == 0)
+                    {
+                        option.IsAppend = true;
+                    }
+                    else if (string.Compare(arg, "-t") == 0)
+                    {
+                        option.Timestamp = LogLauncher.TimeStamp.TimeStamp;
+                    }
+                    else if (string.Compare(arg, "-tz") == 0)
+                    {
+                        option.Timestamp = LogLauncher.TimeStamp.TimeStampTZ;
+                    }
+                    else
+                    {
+                        throw new UnknownOptionException(arg);
+                    }
+                }
+                else
+                {
+                    option.FileName = arg;
+                }
+            }
+
+            if (option.FileName == null)
+            {
+                throw new LogFileNotFoundException();
+            }
+            return option;
         }
 
         /// <summary>
