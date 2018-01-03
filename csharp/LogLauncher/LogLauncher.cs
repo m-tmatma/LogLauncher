@@ -14,7 +14,7 @@ namespace LogLauncher
         {
             None,           // use original text
             TimeStamp,      // append timestamp to the head of line
-            TimeStameTZ,    // append timestamp and timezone to the head of line
+            TimeStampTZ,    // append timestamp and timezone to the head of line
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace LogLauncher
                     return line;
                 case TimeStamp.TimeStamp:
                     return AddTimeStamp(line);
-                case TimeStamp.TimeStameTZ:
+                case TimeStamp.TimeStampTZ:
                     return AddTimeStampTZ(line);
             }
             return line;
