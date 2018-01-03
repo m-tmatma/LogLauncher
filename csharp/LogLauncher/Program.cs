@@ -5,19 +5,6 @@ namespace LogLauncher
 {
     class Program
     {
-        static void OutputDataReceived(
-            object sender,
-            DataReceivedEventArgs e)
-        {
-            Console.WriteLine(e.Data);
-        }
-        static void ErrorDataReceived(
-            object sender,
-            DataReceivedEventArgs e)
-        {
-            Console.WriteLine(e.Data);
-        }
-
         static int Main(string[] args)
         {
             string argument = string.Empty;
@@ -43,8 +30,14 @@ namespace LogLauncher
 
             process.StartInfo.CreateNoWindow = false;
             process.StartInfo.Arguments = argument;
-            process.OutputDataReceived += OutputDataReceived;
-            process.ErrorDataReceived += ErrorDataReceived;
+            process.OutputDataReceived += new DataReceivedEventHandler(delegate (object obj, DataReceivedEventArgs e)
+            {
+                Console.WriteLine(e.Data);
+            });
+            process.ErrorDataReceived += new DataReceivedEventHandler(delegate (object obj, DataReceivedEventArgs e)
+            {
+                Console.WriteLine(e.Data);
+            });
 
             try
             {
