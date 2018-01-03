@@ -1,5 +1,6 @@
 @echo off
-for /r %%i in (out*.txt) do (
+set LOGPREFIX=out
+for /r %%i in (%LOGPREFIX%*.txt) do (
 	if exist %%i (
 		echo removing %%i
 		del %%i
@@ -28,14 +29,14 @@ set EXE_DIR=%~dp1
 %EXE_PATH%   -t                        -- cmd.exe /c dir c:\
 %EXE_PATH%   -tz                       -- cmd.exe /c dir c:\
 
-%EXE_PATH%   -t  %EXE_DIR%out-t.txt     -- cmd.exe /c dir c:\
-%EXE_PATH%   -tz %EXE_DIR%out-tz.txt    -- cmd.exe /c dir c:\
+%EXE_PATH%   -t  %EXE_DIR%%LOGPREFIX%-t.txt     -- cmd.exe /c dir c:\
+%EXE_PATH%   -tz %EXE_DIR%%LOGPREFIX%-tz.txt    -- cmd.exe /c dir c:\
 
-%EXE_PATH% -a -t  %EXE_DIR%out-t-a.txt  -- cmd.exe /c dir c:\
-%EXE_PATH% -a -t  %EXE_DIR%out-t-a.txt  -- cmd.exe /c dir c:\
+%EXE_PATH% -a -t  %EXE_DIR%%LOGPREFIX%-t-a.txt  -- cmd.exe /c dir c:\
+%EXE_PATH% -a -t  %EXE_DIR%%LOGPREFIX%-t-a.txt  -- cmd.exe /c dir c:\
 
-%EXE_PATH% -a -tz %EXE_DIR%out-tz-a.txt -- cmd.exe /c dir c:\
-%EXE_PATH% -a -tz %EXE_DIR%out-tz-a.txt -- cmd.exe /c dir c:\
+%EXE_PATH% -a -tz %EXE_DIR%%LOGPREFIX%-tz-a.txt -- cmd.exe /c dir c:\
+%EXE_PATH% -a -tz %EXE_DIR%%LOGPREFIX%-tz-a.txt -- cmd.exe /c dir c:\
 @echo off
 
 goto :EOF
