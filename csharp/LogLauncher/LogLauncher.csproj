@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\$(TargetFrameworkVersion)\</OutputPath>
+    <OutputPath>..\bin\Debug\$(TargetFrameworkVersion)\</OutputPath>
     <IntermediateOutputPath>obj\Debug\$(TargetFrameworkVersion)\</IntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -26,7 +26,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\$(TargetFrameworkVersion)\</OutputPath>
+    <OutputPath>..\bin\Release\$(TargetFrameworkVersion)\</OutputPath>
     <IntermediateOutputPath>obj\Release\$(TargetFrameworkVersion)\</IntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

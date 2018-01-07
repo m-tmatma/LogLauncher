@@ -16,13 +16,13 @@
   </metadata>
   <files>
     <file src="../LICENSE.txt" target="." />
-    <file src="LogLauncher/bin/Release/v3.5/LogLauncher.exe"   target="lib\net35"  />
-    <file src="LogLauncher/bin/Release/v3.5/LogLauncher.pdb"   target="lib\net35"  />
-    <file src="LogLauncher/bin/Release/v4.0/LogLauncher.exe"   target="lib\net40"  />
-    <file src="LogLauncher/bin/Release/v4.0/LogLauncher.pdb"   target="lib\net40"  />
-    <file src="LogLauncher/bin/Release/v4.5.2/LogLauncher.exe" target="lib\net452" />
-    <file src="LogLauncher/bin/Release/v4.5.2/LogLauncher.pdb" target="lib\net452" />
-    <file src="LogLauncher/bin/Release/v4.6/LogLauncher.exe  " target="lib\net46"  />
-    <file src="LogLauncher/bin/Release/v4.6/LogLauncher.pdb  " target="lib\net46"  />
+    <file src="bin/Release/v3.5/LogLauncher.exe"   target="lib\net35"  />
+    <file src="bin/Release/v3.5/LogLauncher.pdb"   target="lib\net35"  />
+    <file src="bin/Release/v4.0/LogLauncher.exe"   target="lib\net40"  />
+    <file src="bin/Release/v4.0/LogLauncher.pdb"   target="lib\net40"  />
+    <file src="bin/Release/v4.5.2/LogLauncher.exe" target="lib\net452" />
+    <file src="bin/Release/v4.5.2/LogLauncher.pdb" target="lib\net452" />
+    <file src="bin/Release/v4.6/LogLauncher.exe  " target="lib\net46"  />
+    <file src="bin/Release/v4.6/LogLauncher.pdb  " target="lib\net46"  />
   </files>
 </package>
