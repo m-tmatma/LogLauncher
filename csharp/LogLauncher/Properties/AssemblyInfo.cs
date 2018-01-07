@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("LogLauncher")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("launcher with timestamp and tee")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Masaru Tsuchiyama")]
 [assembly: AssemblyProduct("LogLauncher")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright © Masaru Tsuchiyama 2018")]
+[assembly: AssemblyTrademark("Masaru Tsuchiyama")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
