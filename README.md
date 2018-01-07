@@ -10,4 +10,5 @@ launcher with logging and timestamping
 
 ### binary release
 
-Not yet
+https://www.nuget.org/packages/LogLauncher
+
