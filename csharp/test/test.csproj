@@ -3,13 +3,12 @@
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F3DF1A89-4FBA-4540-BFA5-F49522FB8FCB}</ProjectGuid>
+    <ProjectGuid>{BF69D1EB-8F19-4BDA-A322-E421ECBF9309}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LogLauncher</RootNamespace>
-    <AssemblyName>LogLauncher</AssemblyName>
+    <RootNamespace>test</RootNamespace>
+    <AssemblyName>test</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -66,7 +65,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="LogLauncher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

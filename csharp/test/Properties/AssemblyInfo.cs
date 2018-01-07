@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("LogLauncher")]
+[assembly: AssemblyTitle("test")]
 [assembly: AssemblyDescription("launcher with timestamp and tee")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Masaru Tsuchiyama")]
-[assembly: AssemblyProduct("LogLauncher")]
+[assembly: AssemblyProduct("test")]
 [assembly: AssemblyCopyright("Copyright © Masaru Tsuchiyama 2018")]
 [assembly: AssemblyTrademark("Masaru Tsuchiyama")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f3df1a89-4fba-4540-bfa5-f49522fb8fcb")]
+[assembly: Guid("bf69d1eb-8f19-4bda-a322-e421ecbf9309")]
 
 // Version information for an assembly consists of the following four values:
 //
