@@ -12,3 +12,6 @@ launcher with logging and timestamping
 
 https://www.nuget.org/packages/LogLauncher
 
+### CI Build
+
+[CI Build](https://ci.appveyor.com/project/MasaruTsuchiyama/loglauncher/build/artifacts)
