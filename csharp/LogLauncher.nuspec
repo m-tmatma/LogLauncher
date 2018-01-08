@@ -5,7 +5,7 @@
     <version>1.0.1</version>
     <authors>Masaru Tsuchiyama</authors>
     <owners>Masaru Tsuchiyama</owners>
-    <licenseUrl>https://raw.githubusercontent.com/m-tmatma/LogLauncher/master/LICENCE.txt</licenseUrl>
+    <licenseUrl>https://github.com/m-tmatma/LogLauncher/blob/master/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/m-tmatma/LogLauncher</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/m-tmatma/LogLauncher/master/LogLauncher.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
