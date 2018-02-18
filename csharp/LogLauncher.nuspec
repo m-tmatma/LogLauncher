@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>LogLauncher</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <authors>Masaru Tsuchiyama</authors>
     <owners>Masaru Tsuchiyama</owners>
     <licenseUrl>https://github.com/m-tmatma/LogLauncher/blob/master/LICENSE.txt</licenseUrl>
