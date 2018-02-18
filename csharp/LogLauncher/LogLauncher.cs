@@ -250,8 +250,11 @@ namespace LogLauncher
                     process.StartInfo.CreateNoWindow = false;
                     process.StartInfo.Arguments = argument;
 
+                    var encoding = Console.OutputEncoding;
+                    process.StartInfo.StandardOutputEncoding = encoding;
+                    process.StartInfo.StandardErrorEncoding = encoding;
+
                     var fileMode = option.IsAppend ? FileMode.Append : FileMode.Create;
-                    var encoding = Encoding.Default;
 
                     using (var fs = File.Open(option.FileName, fileMode, FileAccess.Write, FileShare.Read))
                     {
